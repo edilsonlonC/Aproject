@@ -1,5 +1,6 @@
 /* importando fuentes */
 @import url("https://fonts.googleapis.com/css?family=Mystery+Quest");
+@import url("http://fonts.googleapis.com/css?family=Tangerine");
 
 /* estilos generales */
 *{
@@ -57,10 +58,84 @@ header a{
   background:rgba(85, 129, 144, 0.8);
   color: yellow;
   font-size: 30px;
+  cursor: pointer;
 }
 
-header a:hover{
+header a:hover , .active{
 
   color: black;
   background:rgba(85, 129, 144, 0.8);
+}
+
+/* contenedor principal*/
+#content{
+  min-height: 440px;
+  width: 75%;
+  margin: 0px auto;
+  box-shadow: 0px 0px 100px black;
+  background: rgba(255,255,255,0.7);
+  padding-top: 120px;
+  border-left: 1px solid #b7b7b7;
+
+
+}
+
+
+/* íe de p'agina */
+footer{
+    padding-top: 25px;
+    width: 100%;
+    margin: 0px auto;
+    color: white;
+    background:rgba(41, 129, 144, 0.8);
+    height: 50px;
+    padding-left: 250px;
+
+}
+footer:hover{
+  color: black;
+  background:rgba(200, 129, 144, 0.8);
+}
+
+
+/* sobre mi  */
+#title{
+  width: 70%;
+  margin: 0 auto;
+  text-align: center;
+  margin-bottom: 100px;
+}
+
+#title h1{
+  font-family: 'Tangerine';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 200%;
+}
+
+article.about{
+
+  width: 70%;
+  margin: 0px auto;
+  margin-bottom: 20px;
+  font-size: 23px;
+}
+.about h2{
+  border-bottom: o0x solid #ccc;
+  padding-top: 5px;
+}
+
+
+/* create form */
+.create{
+  width: 80%;
+  margin: 0 auto;
+}
+form p {
+  margin: 20px;
+}
+
+
+form input {
+  width: 100%;
 }
