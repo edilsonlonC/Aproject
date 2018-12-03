@@ -31,10 +31,10 @@
     </p>
     <p>
       <label for="image">Imagen</label>
-      <input type="file" name="image"  #image="ngModel" [(ngModel)]= "project.image" >
+      <input type="file" name="image"  #image="ngModel" [(ngModel)]= "project.image  " (change)="fileChangeEvent($event)">
 
     </p>
-    <input id="send" type="submit" name="send" value="Enviar" [disabled]="!projectForm.form.valid">
+    <input id="send" type="submit" name="send" value="Enviar" [disabled]="!projectForm.form.valid" >
   </form>
 
 </div>
