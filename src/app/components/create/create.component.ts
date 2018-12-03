@@ -11,6 +11,7 @@ import { ProjectService} from '../../services/project.service';
 export class CreateComponent implements OnInit {
   public title: string;
   public project : Project;
+  public status : boolean;
   constructor(
       private _projectService: ProjectService
 
@@ -23,6 +24,18 @@ export class CreateComponent implements OnInit {
   }
   onSubmit(form){
     console.log(this.project);
+    this._projectService.saveProject(this.project).subscribe(
+        response => {
+          if (response.project) this.status=true;
+          else this.status = false;
+        },
+
+        error => {
+          console.log(error);
+        }
+
+
+    )
   }
 
 }

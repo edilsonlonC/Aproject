@@ -1,3 +1,3 @@
 export var Global = {
-  url: 'http://localhost:3700/projects'
+  url: 'http://localhost:3700/'
 };

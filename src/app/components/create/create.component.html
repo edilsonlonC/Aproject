@@ -1,30 +1,40 @@
 <div class="create">
+  <h2>{{ title }}</h2>
+  <div  *ngIf = "status" class="success">
+        <h3>el proyecto se ha creado correctamente <a href="#">ver </a> </h3>
+</div>
   <form #projectForm="ngForm" (ngSubmit)="onSubmit(projectForm)" >
     <p>
-      <label for="name" #name="ngModel" [(ngModel)]= "project.name">Nombre</label>
-      <input type="text" name="name" >
+      <label for="name">Nombre</label>
+      <input type="text" name="name" #name="ngModel" [(ngModel)]= "project.name" required >
+      <span *ngIf="name.touched && !name.valid"> Nomnre incorrecto</span>
     </p>
     <p>
-      <label for="description" #name="ngModel" [(ngModel)]= "project.description">Descripcion</label>
-      <input type="text" name="description" >
+      <label for="description" >Descripcion</label>
+      <input type="text" name="description" #description="ngModel" [(ngModel)]= "project.description" required>
+        <span *ngIf="description.touched && !description.valid">Descripción incorrecta</span>
     </p>
     <p>
-      <label for="category" #name="ngModel" [(ngModel)]= "project.category">Categoría</label>
-      <input type="text" name="category" >
+      <label for="category" >Categoría</label>
+      <input type="text" name="category" #category="ngModel" [(ngModel)]= "project.category" required>
+        <span *ngIf="category.touched && !category.valid"> Categoría incorrecta </span>
     </p>
     <p>
-      <label for="year" #name="ngModel" [(ngModel)]= "project.year">Año</label>
-      <input type="text" name="year" >
+      <label for="year"  >Año</label>
+      <input type="text" name="year" #year="ngModel" [(ngModel)]= "project.year" required>
+        <span *ngIf="year.touched && !year.valid"> Año incorrecto</span>
     </p>
     <p>
-      <label for="langs" #name="ngModel" [(ngModel)]= "project.langs">Lenguajes</label>
-      <input type="text" name="langs" >
+      <label for="langs" >Lenguajes</label>
+      <input type="text" name="langs" #langs="ngModel" [(ngModel)]= "project.langs" required>
+        <span *ngIf="langs.touched && !langs.valid"> Lenguajes incorrectos</span>
     </p>
     <p>
-      <label for="image" #name="ngModel" [(ngModel)]= "project.image">Imagen</label>
-      <input type="file" name="image" >
+      <label for="image">Imagen</label>
+      <input type="file" name="image"  #image="ngModel" [(ngModel)]= "project.image" >
+
     </p>
-    <input id="send " type="submit" name="send" value="Enviar">
+    <input id="send" type="submit" name="send" value="Enviar" [disabled]="!projectForm.form.valid">
   </form>
 
 </div>
